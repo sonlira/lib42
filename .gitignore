@@ -1,0 +1,48 @@
+# === Compilación ===
+*.o
+*.a
+*.so
+a.out
+main
+test
+
+# === Carpetas de build ===
+/build/
+/bin/
+/obj/
+/lib/
+/out/
+
+# === Archivos temporales y logs ===
+*.log
+*.tmp
+*.bak
+*.old
+*.swp
+
+# === Archivos de texto personales ===
+*.txt
+
+# === Archivos de sistema ===
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# === Configuración de IDEs ===
+.vscode/
+.idea/
+.clangd/
+.ccls-cache/
+
+# === Documentación generada ===
+/docs/
+/doxygen/
+/html/
+/latex/
+
+# === Archivos de crash o depuración ===
+core
+vgcore.*
+
+# === Entornos locales ===
+.env
