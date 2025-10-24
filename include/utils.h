@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 16:16:21 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/24 15:39:01 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/24 18:17:09 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,23 +44,22 @@ bool	ft_safe_atoi(const char *s, int *n, bool strict);
 /* ************************************************************************** */
 
 /**
- * Estas funciones operan sobre arrays terminados en NULL 
- * (por ejemplo, `char **`).
+ * Estas funciones operan sobre arrays (`char **`) terminados en NULL 
  * Incluyen utilidades para duplicar, asignar, añadir o insertar elementos,
  * así como para calcular su longitud de forma segura.
  */
 
 ssize_t	ft_arraylen(void **array);
-ssize_t	ft_srcslen(char **array);
+ssize_t	ft_strslen(char **array);
 size_t	ft_print_strs(char **array, bool with_index, bool show_num, \
 	bool with_total);
 char	**ft_arraydup(char **array);
 bool	ft_arrayassign(char ***dst, char **array);
 bool	ft_arraypush(char ***array, const char *val);
 bool	ft_arrayunshift(char ***array, const char *val);
-void	ft_sfree_srts(char ***array);
-void	ft_free_srts(char **array);
-void	*ft_free_srts_ret(char **array);
+void	ft_sfree_strs(char ***array);
+void	ft_free_strs(char **array);
+void	*ft_free_strs_ret(char **array);
 
 /* ************************************************************************** */
 /*                              FUNCIONES DE MATRICES                         */

@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 19:58:55 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/24 15:17:54 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/24 18:15:53 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@
  * @see ft_free_array()
  * @see ft_free_srcs()
  */
-void	ft_sfree_srts(char ***array)
+void	ft_sfree_strs(char ***array)
 {
 	if (!array || !*array)
 		return ;
@@ -72,7 +72,7 @@ void	ft_sfree_srts(char ***array)
  * @see ft_free_array_ret()
  * @see ft_sfree_srcs()
  */
-void	ft_free_srts(char **array)
+void	ft_free_strs(char **array)
 {
 	if (!array || !*array)
 		return ;
@@ -104,7 +104,7 @@ void	ft_free_srts(char **array)
  * @see ft_free_array_ret()
  * @see ft_free_srcs()
  */
-void	*ft_free_srts_ret(char **array)
+void	*ft_free_strs_ret(char **array)
 {
 	if (!array || !*array)
 		return (NULL);

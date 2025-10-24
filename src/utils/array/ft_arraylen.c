@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 19:42:30 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/23 20:44:50 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/24 18:15:06 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ ssize_t	ft_arraylen(void **array)
  * @see ft_free_srcs()
  * @see ft_sfree_srcs()
  */
-ssize_t	ft_srcslen(char **array)
+ssize_t	ft_strslen(char **array)
 {
 	return (ft_arraylen((void **)array));
 }
