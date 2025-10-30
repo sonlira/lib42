@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 16:16:21 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/30 21:17:07 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 21:22:22 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ char	*ft_itoa_base(uint64_t un, const char *src_base);
 
 /* Conversión segura (Safe Ato*) */
 
-bool	ft_safe_atoll(const char *s, long long *n, bool strict);
-bool	ft_safe_atol(const char *s, long *n, bool strict);
-bool	ft_safe_atoi(const char *s, int *n, bool strict);
+bool	ft_atoll_safe(const char *s, long long *n, bool strict);
+bool	ft_atol_safe(const char *s, long *n, bool strict);
+bool	ft_atoi_safe(const char *s, int *n, bool strict);
 
 /* ************************************************************************** */
 /*                             FUNCIONES DE ARRAYS                            */

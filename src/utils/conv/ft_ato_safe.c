@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_safe_ato.c                                      :+:      :+:    :+:   */
+/*   ft_ato_safe.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 22:59:09 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/20 15:22:55 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 21:24:25 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,14 @@
  *
  * @example
  * uint64_t num;
- * if (ft_safe_atoull_core("  +12345  ", &num, true))
+ * if (ft_atoull_safe_core("  +12345  ", &num, true))
  *     printf("%llu\\n", (unsigned long long)num); // imprime 12345
  * else
  *     printf("Error de conversión\\n");
  *
- * @see ft_safe_atoll(), ft_safe_atol(), ft_safe_atoi()
+ * @see ft_atoll_safe(), ft_atol_safe(), ft_atoi_safe()
  */
-static bool	ft_safe_atoull_core(const char *s, uint64_t *n, bool strict)
+static bool	ft_atoull_safe_core(const char *s, uint64_t *n, bool strict)
 {
 	int			sign;
 	uint64_t	num;
@@ -85,7 +85,7 @@ static bool	ft_safe_atoull_core(const char *s, uint64_t *n, bool strict)
  *        de forma segura.
  *
  * @details
- * La función `ft_safe_atoll()` convierte la cadena `s` en un valor de tipo
+ * La función `ft_atoll_safe()` convierte la cadena `s` en un valor de tipo
  * `long long`. Controla los espacios iniciales, el signo y verifica
  * que no se produzca un desbordamiento dentro del rango representable
  * por `long long`.
@@ -109,25 +109,25 @@ static bool	ft_safe_atoull_core(const char *s, uint64_t *n, bool strict)
  * @return `true` si la conversión es válida, `false` si hay error de formato
  *         o desbordamiento.
  *
- * @note Esta función utiliza internamente `ft_safe_atoull_core()` para realizar
+ * @note Esta función utiliza internamente `ft_atoull_safe_core()` para realizar
  *       la conversión y validar el rango de `long long`.
  *
  * @example
  * long long value;
- * if (ft_safe_atoll("  -9223372036854775807", &value, true))
+ * if (ft_atoll_safe("  -9223372036854775807", &value, true))
  *     printf("%lld\\n", value);
  * else
  *     printf("Conversión inválida\\n");
  *
- * @see ft_safe_atoull_core(), ft_safe_atol(), ft_safe_atoi()
+ * @see ft_atoull_safe_core(), ft_atol_safe(), ft_atoi_safe()
  */
-bool	ft_safe_atoll(const char *s, long long *n, bool strict)
+bool	ft_atoll_safe(const char *s, long long *n, bool strict)
 {
 	uint64_t	num;
 
 	if (!s || !n)
 		return (false);
-	if (!ft_safe_atoull_core(s, &num, strict))
+	if (!ft_atoull_safe_core(s, &num, strict))
 		return (false);
 	*n = (long long)(num);
 	return (true);
@@ -137,9 +137,9 @@ bool	ft_safe_atoll(const char *s, long long *n, bool strict)
  * @brief Convierte una cadena a un número entero largo (`long`) de forma segura.
  *
  * @details
- * La función `ft_safe_atol()` convierte la cadena `s` en un valor de tipo
+ * La función `ft_atol_safe()` convierte la cadena `s` en un valor de tipo
  * `long`.
- * Internamente utiliza `ft_safe_atoll()` para la conversión y luego verifica
+ * Internamente utiliza `ft_atoll_safe()` para la conversión y luego verifica
  * que el resultado esté dentro del rango válido de `LONG_MIN` a `LONG_MAX`.
  *
  * Si la conversión tiene éxito, almacena el resultado en `*n` y devuelve `true`.
@@ -163,20 +163,20 @@ bool	ft_safe_atoll(const char *s, long long *n, bool strict)
  *
  * @example
  * long num;
- * if (ft_safe_atol("  +123456", &num, true))
+ * if (ft_atol_safe("  +123456", &num, true))
  *     printf("%ld\\n", num); // imprime 123456
  * else
  *     printf("Conversión inválida\\n");
  *
- * @see ft_safe_atoll(), ft_safe_atoi()
+ * @see ft_atoll_safe(), ft_atoi_safe()
  */
-bool	ft_safe_atol(const char *s, long *n, bool strict)
+bool	ft_atol_safe(const char *s, long *n, bool strict)
 {
 	long long	num;
 
 	if (!s || !n)
 		return (false);
-	if (!ft_safe_atoll(s, &num, strict))
+	if (!ft_atoll_safe(s, &num, strict))
 		return (false);
 	if (num > LONG_MAX || num < LONG_MIN)
 		return (false);
@@ -188,8 +188,8 @@ bool	ft_safe_atol(const char *s, long *n, bool strict)
  * @brief Convierte una cadena a un número entero (`int`) de forma segura.
  *
  * @details
- * La función `ft_safe_atoi()` convierte la cadena `s` en un valor de tipo `int`.
- * Internamente utiliza `ft_safe_atol()` para realizar la conversión y comprueba
+ * La función `ft_atoi_safe()` convierte la cadena `s` en un valor de tipo `int`.
+ * Internamente utiliza `ft_atol_safe()` para realizar la conversión y comprueba
  * que el valor esté dentro del rango permitido por `INT_MIN` y `INT_MAX`.
  *
  * Si la conversión tiene éxito, almacena el resultado en `*n` y devuelve `true`.
@@ -212,20 +212,20 @@ bool	ft_safe_atol(const char *s, long *n, bool strict)
  *
  * @example
  * int val;
- * if (ft_safe_atoi("42", &val, true))
+ * if (ft_atoi_safe("42", &val, true))
  *     printf("%d\\n", val); // imprime 42
  * else
  *     printf("Error: cadena inválida\\n");
  *
- * @see ft_safe_atol(), ft_safe_atoll()
+ * @see ft_atol_safe(), ft_atoll_safe()
  */
-bool	ft_safe_atoi(const char *s, int *n, bool strict)
+bool	ft_atoi_safe(const char *s, int *n, bool strict)
 {
 	long	num;
 
 	if (!s || !n)
 		return (false);
-	if (!ft_safe_atol(s, &num, strict))
+	if (!ft_atol_safe(s, &num, strict))
 		return (false);
 	if (num > INT_MAX || num < INT_MIN)
 		return (false);
