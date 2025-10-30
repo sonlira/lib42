@@ -6,11 +6,11 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 21:28:12 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/23 19:04:32 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 17:40:00 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib42.h"
+#include "printf_internal.h"
 
 static void	put_dot_precision(uint32_t un, char *unum, t_snformat *snf)
 {

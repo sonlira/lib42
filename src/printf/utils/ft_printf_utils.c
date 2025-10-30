@@ -6,11 +6,11 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 20:17:33 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/23 14:12:12 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 17:40:19 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib42.h"
+#include "printf_internal.h"
 
 /**
  * @brief Comprueba si un carácter es una bandera (flag) válida de printf.

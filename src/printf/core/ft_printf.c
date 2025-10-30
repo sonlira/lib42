@@ -6,11 +6,11 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 20:15:29 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/23 18:03:32 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 17:38:26 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib42.h"
+#include "printf_internal.h"
 
 /**
  * @brief Núcleo principal de ft_printf: analiza y procesa la cadena de formato.

@@ -6,11 +6,11 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 21:27:10 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/23 18:26:24 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 17:39:19 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib42.h"
+#include "printf_internal.h"
 
 static void	put_char_with_flags(int c, t_snformat *snf)
 {

@@ -6,11 +6,11 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 20:50:30 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/24 15:34:49 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 17:38:20 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib42.h"
+#include "printf_internal.h"
 
 /**
  * @brief Selecciona y ejecuta la función de impresión adecuada según el tipo de

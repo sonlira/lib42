@@ -6,11 +6,11 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 14:24:52 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/23 18:10:39 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 17:40:13 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib42.h"
+#include "printf_internal.h"
 
 /**
  * @brief Normaliza las banderas aplicables al tipo de formato de carácter 

@@ -6,11 +6,11 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 20:15:29 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/23 17:59:53 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 17:38:31 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib42.h"
+#include "printf_internal.h"
 
 /**
  * @brief Núcleo interno de ft_snprintf: analiza y procesa la cadena de formato.

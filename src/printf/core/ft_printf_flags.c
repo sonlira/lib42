@@ -6,11 +6,11 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 18:50:24 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/20 15:33:09 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 17:38:15 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib42.h"
+#include "printf_internal.h"
 
 static bool	parse_flag(const char **s, t_flags *f)
 {

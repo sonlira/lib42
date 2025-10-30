@@ -6,11 +6,11 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 21:27:22 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/23 18:22:44 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 17:38:59 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib42.h"
+#include "printf_internal.h"
 
 static ssize_t	effective_num_length(void *ptr)
 {

@@ -6,11 +6,11 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 20:50:51 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/23 18:12:59 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 17:40:24 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib42.h"
+#include "printf_internal.h"
 
 /**
  * @brief Inicializa una estructura de tipo @ref t_snformat.

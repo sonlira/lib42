@@ -6,11 +6,11 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 21:27:17 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/23 18:29:40 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 17:39:35 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib42.h"
+#include "printf_internal.h"
 
 static void	put_signed(bool neg, t_snformat *snf)
 {

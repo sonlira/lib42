@@ -6,11 +6,11 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 21:28:12 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/23 18:24:57 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 17:39:13 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib42.h"
+#include "printf_internal.h"
 
 static ssize_t	print_dot_precision(uint32_t un, t_flags *f, int fd)
 {
