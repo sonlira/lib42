@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 16:16:21 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/30 19:12:13 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 20:15:00 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,8 @@ void	*ft_free_strs_ret(char **array);
 
 void	**ft_create_matrix(size_t rows, size_t cols, size_t size, \
 		bool add_null);
-void	**ft_create_matrix_raw(size_t rows, size_t cols, size_t size);
-void	**ft_create_matrix_null(size_t rows, size_t cols, size_t size);
-void	ft_sfree_matrix(int ***matrix, size_t n);
-void	ft_free_matrix(int **matrix, size_t n);
+void	ft_sfree_matrix(void ***matrix, size_t n);
+void	ft_free_matrix(void **matrix, size_t n);
+void	*ft_free_matrix_ret(void **matrix, size_t n);
 
 #endif
