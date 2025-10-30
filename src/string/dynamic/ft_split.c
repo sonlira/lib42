@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 20:48:43 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/24 14:36:24 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 21:12:49 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static bool	fill_array(char **array, size_t size, const char *s, char delimiter)
 			array[i] = ft_substr(s, 0, word_size(s, delimiter));
 			if (!array[i])
 			{
-				ft_sfree_split(&array);
+				ft_free_split_safe(&array);
 				return (false);
 			}
 			i++;

@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 16:16:24 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/30 20:53:54 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 21:12:49 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ char		*ft_strjoin(const char *s1, const char *s2);
 char		*ft_substr(const char *s, unsigned int start, size_t len);
 char		*ft_strtrim(const char *s1, const char *set);
 char		**ft_split(const char *s, char c);
-void		ft_sfree_split(char ***split); // # add
+void		ft_free_split_safe(char ***split); // # add
 void		ft_free_split(char **split);
 void		*ft_free_split_ret(char **split);
 
