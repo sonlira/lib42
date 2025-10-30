@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 22:07:53 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/30 21:03:30 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 21:30:57 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@
  *         de memoria durante la reserva.
  *
  * @note La matriz devuelta debe liberarse utilizando una de las funciones:
- * @ref ft_sfree_matrix(), @ref ft_free_matrix() o @ref ft_free_matrix_ret().
+ * @ref ft_free_matrix_safe(), @ref ft_free_matrix() o @ref ft_free_matrix_ret().
  *
  * @see ft_calloc(), ft_free_array_n_ret(), ft_arraylen()
  */
@@ -85,7 +85,7 @@ void	**ft_create_matrix(size_t rows, size_t cols, size_t size, bool add_null)
  * @see ft_free_array_safe()
  * @see ft_free_array_n_safe()
  */
-void	ft_sfree_matrix(void ***matrix, size_t n)
+void	ft_free_matrix_safe(void ***matrix, size_t n)
 {
 	if (!matrix || !*matrix)
 		return ;
@@ -125,7 +125,7 @@ void	ft_free_matrix(void **matrix, size_t n)
 {
 	if (!matrix || !*matrix)
 		return ;
-	ft_sfree_matrix((void ***)&matrix, n);
+	ft_free_matrix_safe((void ***)&matrix, n);
 }
 
 /**
