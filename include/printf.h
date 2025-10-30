@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 16:16:27 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/30 17:24:38 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 21:47:09 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@
 
 ssize_t		ft_printf(const char *format, ...);
 ssize_t		ft_eprintf(const char *format, ...);
-
 
 /* ************************************************************************** */
 /*                          FUNCIONES PRINCIPALES SNPRINTF                    */

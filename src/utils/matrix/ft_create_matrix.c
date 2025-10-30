@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 22:07:53 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/30 21:30:57 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 21:47:35 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,8 @@ void	**ft_create_matrix(size_t rows, size_t cols, size_t size, bool add_null)
  * pone el puntero original a `NULL` tras liberar su contenido.
  *
  * Si se conoce el número de filas @p n, se usa @ref ft_free_array_n_safe();  
- * de lo contrario, @ref ft_free_array_safe() asume una matriz terminada en `NULL`.
+ * de lo contrario, @ref ft_free_array_safe() asume una matriz terminada en 
+ * `NULL`.
  *
  * @param matrix  Puntero triple a la matriz (`void ***`), que será 
  * liberado y puesto a `NULL`.

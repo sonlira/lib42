@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 16:11:38 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/30 20:55:59 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 21:47:49 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,4 +81,3 @@ size_t	ft_strlen(const char *str)
 		length++;
 	return (length);
 }
-
