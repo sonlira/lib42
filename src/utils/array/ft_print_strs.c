@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 14:52:38 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/30 19:12:13 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 21:40:08 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,10 @@
 /**
  * @brief Función para imprimir arrays de cadenas con opciones de formato.
  *
+ * @details
  * Esta función recorre un array de cadenas terminado en NULL e imprime cada
  * elemento en una nueva línea. Permite mostrar el número de elemento, su índice
  * y el total de elementos al final, según las opciones indicadas.
- *
- * Ejemplo de salida:
- * @code
- * 1. [0] Hola
- * 2. [1] Mundo
- * Total: 2
- * @endcode
  *
  * @param array       Array de cadenas terminado en NULL (char **).
  * @param with_index  Si es true, imprime el índice entre corchetes antes 
@@ -37,6 +31,14 @@
  *
  * @note Si @p array es NULL, la función imprime "(null array)" en stderr
  *       y devuelve 0.
+ *
+ * @example
+ * Ejemplo de salida:
+ * @code
+ * 1. [0] Hola
+ * 2. [1] Mundo
+ * Total: 2
+ * @endcode
  */
 size_t	ft_putstrs_op(
 	char **array,
