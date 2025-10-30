@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 21:01:34 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/26 17:40:42 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 21:02:47 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@
  * @note Las cadenas existentes no se duplican, solo se reubican.
  *       El nuevo valor se duplica para asegurar su propiedad dinámica.
  *
- * @see ft_arraylen(), ft_calloc(), ft_strassign(), ft_free_array()
+ * @see ft_arraylen(), ft_calloc(), ft_strassign(), ft_free_array_safe()
  */
 bool	ft_arraypush(char ***array, const char *val)
 {

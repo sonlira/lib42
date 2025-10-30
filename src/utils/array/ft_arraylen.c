@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 19:42:30 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/24 18:15:06 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 21:02:47 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@
  * @note Esta función es genérica y puede usarse con arrays de cualquier tipo
  *       siempre que terminen en un puntero NULL.
  *
- * @see ft_arraydup(), ft_arrayassign(), ft_free_array()
+ * @see ft_arraydup(), ft_arrayassign(), ft_free_array_safe()
  */
 ssize_t	ft_arraylen(void **array)
 {

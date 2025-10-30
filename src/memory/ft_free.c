@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 21:02:20 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/15 21:25:53 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 21:04:59 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@
  * - Para pasar un puntero normal, **debes castear su dirección a `void **`**:
  *   ```c
  *   char *str = malloc(20);
- *   ft_free((void **)&str);
+ *   ft_free_safe((void **)&str);
  *   ```
  *   Esto permite que la función modifique el puntero original y lo deje en NULL.
  *
@@ -41,7 +41,7 @@
  * char *str = malloc(10);
  * if (!str)
  *     return ;
- * ft_free((void **)&str);
+ * ft_free_safe((void **)&str);
  * // Ahora 'str' == NULL, no apunta a memoria liberada.
  * @endcode
  *
@@ -50,10 +50,10 @@
  * char *s1 = malloc(5);
  * char *s2 = malloc(5);
  * free(s1);          // s1 ahora apunta a memoria inválida
- * ft_free((void **)&s2); // s2 ahora es NULL
+ * ft_free_safe((void **)&s2); // s2 ahora es NULL
  * @endcode
  */
-void	ft_free(void **ptr)
+void	ft_free_safe(void **ptr)
 {
 	if (ptr && *ptr)
 	{
@@ -70,8 +70,8 @@ void	ft_free(void **ptr)
  * Es útil para liberar memoria dentro de funciones que deben **retornar NULL**
  * al fallar, evitando escribir dos líneas (`free` + `return NULL`).
  *
- * A diferencia de `ft_free`, esta función **no modifica el puntero original**,
- * solo lo libera. Su propósito es simplificar retornos.
+ * A diferencia de `ft_free_safe`, esta función **no modifica el puntero 
+ * original**, solo lo libera. Su propósito es simplificar retornos.
  *
  * @param ptr Puntero al bloque de memoria a liberar.
  * @return Siempre devuelve NULL.
@@ -84,7 +84,7 @@ void	ft_free(void **ptr)
  * ```
  *
  * @example
- * ### Ejemplo — Diferencia con ft_free
+ * ### Ejemplo — Diferencia con ft_free_safe
  * @code
  * char *s1 = malloc(10);
  * char *s2 = malloc(10);
@@ -92,7 +92,7 @@ void	ft_free(void **ptr)
  * s1 = ft_free_ret(s1);
  * // s1 == NULL (retorno explícito)
  *
- * ft_free((void **)&s2);
+ * ft_free_safe((void **)&s2);
  * // s2 == NULL (modificado por referencia)
  * @endcode
  */

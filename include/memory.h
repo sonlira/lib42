@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 16:16:30 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/15 22:23:13 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 21:04:03 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,11 @@ ssize_t	ft_memcmp(const void *s1, const void *s2, size_t n);
  */
 
 void	*ft_calloc(size_t count, size_t size);
-void	ft_free_array(void ***array); // # add
+void	ft_free_array_safe(void ***array); // # add
 void	*ft_free_array_ret(void **array); // # add
-void	ft_free_array_n(void ***array, size_t n); // # add
+void	ft_free_array_n_safe(void ***array, size_t n); // # add
 void	*ft_free_array_n_ret(void **array, size_t n); // # add
-void	ft_free(void **ptr); // # add versión segura
+void	ft_free_safe(void **ptr); // # add versión segura
 void	*ft_free_ret(void *ptr); // # add versión cómoda
 
 #endif

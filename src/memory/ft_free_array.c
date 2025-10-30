@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 21:13:19 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/23 18:59:23 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 21:05:14 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
  *
  * @details
  * Recorre el array de punteros hasta encontrar un elemento NULL, liberando
- * cada elemento con `ft_free` y luego el propio array principal.
+ * cada elemento con `ft_free_safe` y luego el propio array principal.
  * Tras la llamada, el puntero original queda anulado (NULL) para evitar
  * accesos inválidos.
  *
@@ -31,7 +31,7 @@
  * Debe usarse solo con arrays **terminados en NULL**.  
  * Para pasar el array correctamente, se recomienda usar:
  * ```c
- * ft_free_array((void ***)&array);
+ * ft_free_array_safe((void ***)&array);
  * ```
  *
  * @example
@@ -44,11 +44,11 @@
  * arr[2] = malloc(6);
  * arr[3] = NULL;
  *
- * ft_free_array((void ***)&arr);
+ * ft_free_array_safe((void ***)&arr);
  * // arr == NULL
  * @endcode
  */
-void	ft_free_array(void ***array)
+void	ft_free_array_safe(void ***array)
 {
 	size_t	i;
 
@@ -57,17 +57,17 @@ void	ft_free_array(void ***array)
 	i = 0;
 	while ((*array)[i])
 	{
-		ft_free(&(*array)[i]);
+		ft_free_safe(&(*array)[i]);
 		i++;
 	}
-	ft_free(*array);
+	ft_free_safe(*array);
 }
 
 /**
  * @brief Libera un array terminado en NULL y devuelve siempre NULL.
  *
  * @details
- * Igual que `ft_free_array`, pero diseñada para expresiones de retorno.
+ * Igual que `ft_free_array_safe`, pero diseñada para expresiones de retorno.
  * Libera cada elemento, luego el array principal, y devuelve siempre NULL.
  * Útil para liberar memoria al final de una función con un simple `return`.
  *
@@ -102,7 +102,7 @@ void	*ft_free_array_ret(void **array)
 	i = 0;
 	while (array[i])
 	{
-		ft_free(&array[i]);
+		ft_free_safe(&array[i]);
 		i++;
 	}
 	return (ft_free_ret(array));
@@ -123,7 +123,7 @@ void	*ft_free_array_ret(void **array)
  * @note
  * Debe usarse cuando el array no tiene terminador NULL, por ejemplo:
  * ```c
- * ft_free_array_n((void ***)&array, 3);
+ * ft_free_array_n_safe((void ***)&array, 3);
  * ```
  *
  * @example
@@ -134,11 +134,11 @@ void	*ft_free_array_ret(void **array)
  * nums[1] = malloc(4 * sizeof(int));
  * nums[2] = malloc(4 * sizeof(int));
  *
- * ft_free_array_n((void ***)&nums, 3);
+ * ft_free_array_n_safe((void ***)&nums, 3);
  * // nums == NULL
  * @endcode
  */
-void	ft_free_array_n(void ***array, size_t n)
+void	ft_free_array_n_safe(void ***array, size_t n)
 {
 	size_t	i;
 
@@ -147,17 +147,17 @@ void	ft_free_array_n(void ***array, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		ft_free(&(*array)[i]);
+		ft_free_safe(&(*array)[i]);
 		i++;
 	}
-	ft_free(*array);
+	ft_free_safe(*array);
 }
 
 /**
  * @brief Libera un array de punteros de tamaño conocido y devuelve NULL.
  *
  * @details
- * Versión equivalente a `ft_free_array_n`, pero diseñada para expresiones
+ * Versión equivalente a `ft_free_array_n_safe`, pero diseñada para expresiones
  * de retorno. Libera `n` elementos y el array principal, devolviendo NULL.
  *
  * @param array Doble puntero al array de punteros.
@@ -191,7 +191,7 @@ void	*ft_free_array_n_ret(void **array, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		ft_free(&array[i]);
+		ft_free_safe(&array[i]);
 		i++;
 	}
 	return (ft_free_ret(array));

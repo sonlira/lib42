@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 19:50:13 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/23 19:54:44 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 21:02:47 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	ft_sfree_split(char ***split)
 {
 	if (!split || !*split)
 		return ;
-	ft_free_array((void ***)split);
+	ft_free_array_safe((void ***)split);
 }
 
 /**

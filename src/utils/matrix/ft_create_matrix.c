@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 22:07:53 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/30 20:09:57 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 21:03:30 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ void	**ft_create_matrix(size_t rows, size_t cols, size_t size, bool add_null)
  * Esta función libera una matriz de punteros (`void **`) y, además, 
  * pone el puntero original a `NULL` tras liberar su contenido.
  *
- * Si se conoce el número de filas @p n, se usa @ref ft_free_array_n();  
- * de lo contrario, @ref ft_free_array() asume una matriz terminada en `NULL`.
+ * Si se conoce el número de filas @p n, se usa @ref ft_free_array_n_safe();  
+ * de lo contrario, @ref ft_free_array_safe() asume una matriz terminada en `NULL`.
  *
  * @param matrix  Puntero triple a la matriz (`void ***`), que será 
  * liberado y puesto a `NULL`.
@@ -82,17 +82,17 @@ void	**ft_create_matrix(size_t rows, size_t cols, size_t size, bool add_null)
  * // m == NULL
  * @endcode
  *
- * @see ft_free_array()
- * @see ft_free_array_n()
+ * @see ft_free_array_safe()
+ * @see ft_free_array_n_safe()
  */
 void	ft_sfree_matrix(void ***matrix, size_t n)
 {
 	if (!matrix || !*matrix)
 		return ;
 	if (n > 0)
-		ft_free_array_n(matrix, n);
+		ft_free_array_n_safe(matrix, n);
 	else
-		ft_free_array(matrix);
+		ft_free_array_safe(matrix);
 }
 
 /**

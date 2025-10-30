@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 00:51:00 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/23 19:08:10 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 21:04:03 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ bool	ft_strreplace(char **dst, char *src)
 {
 	if (!dst)
 		return (false);
-	ft_free((void **)dst);
+	ft_free_safe((void **)dst);
 	*dst = src;
 	return (true);
 }

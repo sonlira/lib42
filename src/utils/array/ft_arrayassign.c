@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 20:56:57 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/23 19:05:45 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 21:02:47 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
  *
  * La función ft_arrayassign() crea una copia del array de cadenas `array`
  * y la asigna al puntero `*dst`. Si el destino ya contenía un array previo,
- * este se libera de forma segura mediante ft_free_array().
+ * este se libera de forma segura mediante ft_free_array_safe().
  *
  * @param dst Doble puntero al array de destino. Debe ser válido.
  *            Se espera que sea del tipo `char ***`, compatible con `void ***`.
@@ -29,7 +29,7 @@
  * @note La memoria anterior apuntada por `*dst` se libera automáticamente
  *       y el puntero se actualiza con la nueva copia.
  *
- * @see ft_arraydup(), ft_free_array()
+ * @see ft_arraydup(), ft_free_array_safe()
  */
 bool	ft_arrayassign(char ***dst, char **array)
 {
@@ -40,7 +40,7 @@ bool	ft_arrayassign(char ***dst, char **array)
 	assigned = ft_arraydup(array);
 	if (!assigned)
 		return (false);
-	ft_free_array((void ***)dst);
+	ft_free_array_safe((void ***)dst);
 	*dst = assigned;
 	return (true);
 }

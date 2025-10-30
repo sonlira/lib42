@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 20:59:05 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/24 14:38:04 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 21:04:03 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static bool	read_fd_to_store(int fd)
 			return (free(buffer), false);
 		joined = ft_strjoin(g_store[fd], buffer);
 		if (!joined)
-			return (ft_free((void **)&g_store[fd]), free(buffer), false);
+			return (ft_free_safe((void **)&g_store[fd]), free(buffer), false);
 		ft_strreplace(&g_store[fd], joined);
 		if (ft_strchr(buffer, '\n'))
 			break ;
@@ -54,16 +54,16 @@ static char	*extract_line(char **store)
 	{
 		line = ft_substr(*store, 0, newline_pos - *store + 1);
 		if (!line)
-			return (ft_free((void **)store), NULL);
+			return (ft_free_safe((void **)store), NULL);
 		remaining = ft_strdup(newline_pos + 1);
 		if (!remaining)
-			return (ft_free((void **)store), ft_free_ret(line));
+			return (ft_free_safe((void **)store), ft_free_ret(line));
 	}
 	else
 	{
 		line = ft_strdup(*store);
 		if (!line)
-			return (ft_free((void **)store), NULL);
+			return (ft_free_safe((void **)store), NULL);
 		remaining = NULL;
 	}
 	ft_strreplace(store, remaining);
@@ -97,7 +97,7 @@ char	*get_next_line(int fd)
 	if (!read_fd_to_store(fd))
 		return (NULL);
 	if (!g_store[fd] || !*g_store[fd])
-		return (ft_free((void **)&g_store[fd]), NULL);
+		return (ft_free_safe((void **)&g_store[fd]), NULL);
 	return (extract_line(&g_store[fd]));
 }
 
@@ -116,5 +116,5 @@ void	get_next_line_free(int fd)
 {
 	if (fd < 0 || fd >= FD_MAX)
 		return ;
-	ft_free((void **)&g_store[fd]);
+	ft_free_safe((void **)&g_store[fd]);
 }
