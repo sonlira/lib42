@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 14:52:38 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/24 16:08:36 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 19:12:13 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@
  * @note Si @p array es NULL, la función imprime "(null array)" en stderr
  *       y devuelve 0.
  */
-size_t	ft_print_strs(
+size_t	ft_putstrs_op(
 	char **array,
 	bool with_index,
 	bool show_num,
@@ -65,4 +65,20 @@ size_t	ft_print_strs(
 	if (with_total)
 		ft_printf("Total: %u\n", (unsigned int)i);
 	return (i);
+}
+
+/**
+ * @brief Imprime un array de cadenas de forma simple.
+ *
+ * @details
+ * Imprime cada string del array seguido de un salto de línea.
+ * Internamente utiliza `ft_print_strs()` con todas las opciones
+ * desactivadas, por lo que no muestra índices ni conteos.
+ *
+ * @param array Array de cadenas terminado en NULL.
+ * @return size_t Número total de cadenas impresas.
+ */
+size_t	ft_putstrs(char **array)
+{
+	return (ft_putstrs_op(array, false, false, false));
 }

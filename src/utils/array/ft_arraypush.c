@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 21:01:34 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/18 21:50:22 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/26 17:40:42 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,14 +48,14 @@ bool	ft_arraypush(char ***array, const char *val)
 	buff = ft_calloc((size_t)(size + 2), sizeof(*buff));
 	if (!buff)
 		return (false);
+	if (!ft_strassign(&buff[size], val))
+		return (free(buff), false);
 	i = 0;
 	while (i < (size_t)size && (*array)[i])
 	{
 		buff[i] = (*array)[i];
 		i++;
 	}
-	if (!ft_strassign(&buff[i], val))
-		return (free(buff), false);
 	free(*array);
 	*array = buff;
 	return (true);

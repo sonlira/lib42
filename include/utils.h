@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 16:16:21 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/24 18:17:09 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 19:12:13 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,9 @@ bool	ft_safe_atoi(const char *s, int *n, bool strict);
 
 ssize_t	ft_arraylen(void **array);
 ssize_t	ft_strslen(char **array);
-size_t	ft_print_strs(char **array, bool with_index, bool show_num, \
+size_t	ft_putstrs_op(char **array, bool with_index, bool show_num, \
 	bool with_total);
+size_t	ft_putstrs(char **array);
 char	**ft_arraydup(char **array);
 bool	ft_arrayassign(char ***dst, char **array);
 bool	ft_arraypush(char ***array, const char *val);
