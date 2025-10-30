@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 19:13:03 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/12 19:24:59 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 20:53:54 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ char	*ft_strdup(const char *s)
 
 	if (!s)
 		return (NULL);
-	size = ft_strlen(s);
+	size = ft_strlen_safe(s);
 	dup = malloc(size + 1);
 	if (!dup)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 16:16:24 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/23 19:56:09 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 20:53:54 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@
  * No modifican ni liberan las cadenas originales.
  */
 
-ssize_t		ft_strlen(const char *str);
+ssize_t		ft_strlen_safe(const char *str);
+size_t		ft_strlen(const char *str);
 ssize_t		ft_count_char(const char *s, int c); // # add
 ssize_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
 ssize_t		ft_strlcat(char *dst, const char *src, size_t dstsize);

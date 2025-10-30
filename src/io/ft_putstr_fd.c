@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 15:03:07 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/22 17:31:36 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 20:53:54 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ ssize_t	ft_putstr_fd(const char *s, int fd)
 
 	if (!s || fd < 0)
 		return (FT_ERROR);
-	len = ft_strlen(s);
+	len = ft_strlen_safe(s);
 	if (len == FT_ERROR)
 		return (FT_ERROR);
 	total = 0;

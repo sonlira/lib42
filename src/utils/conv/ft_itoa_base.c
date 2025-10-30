@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 15:15:42 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/23 10:56:56 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 20:53:54 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ char	*ft_itoa_base(uint64_t un, const char *src_base)
 
 	if (!src_base)
 		return (NULL);
-	base = ft_strlen(src_base);
+	base = ft_strlen_safe(src_base);
 	if (base < 2 || !ft_is_valid_base(src_base))
 		return (NULL);
 	size = ft_unumlen_base(un, (size_t)base);

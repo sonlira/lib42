@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 21:27:17 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/30 17:39:35 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 20:53:54 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	put_dot_precision(uint32_t un, char *num, bool neg, t_snformat *snf)
 	if (snf->f.dot && !snf->f.precision && !un)
 		return ;
 	put_signed(neg, snf);
-	ft_putnchar_to_snf('0', snf->f.precision - ft_strlen(num), snf);
+	ft_putnchar_to_snf('0', snf->f.precision - ft_strlen_safe(num), snf);
 	ft_putstr_to_snf(num, snf);
 }
 

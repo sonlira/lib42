@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 21:27:26 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/30 17:39:47 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 20:53:54 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static ssize_t	effective_str_length(char *s, t_flags *f)
 {
 	ssize_t	len;
 
-	len = ft_strlen(s);
+	len = ft_strlen_safe(s);
 	if (f->dot && f->precision < len)
 		len = f->precision;
 	return (len);

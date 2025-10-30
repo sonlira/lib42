@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 17:46:30 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/21 16:45:53 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 20:53:54 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ ssize_t	ft_putnbr_base_fd(unsigned int un, const char *src_base, int fd)
 
 	if (fd < 0 || !src_base)
 		return (FT_ERROR);
-	len = ft_strlen(src_base);
+	len = ft_strlen_safe(src_base);
 	if (len < 2 || !ft_is_valid_base(src_base))
 		return (FT_ERROR);
 	total = 0;

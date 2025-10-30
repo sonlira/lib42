@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 19:43:09 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/13 12:41:01 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 20:53:54 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 		return (NULL);
 	while (*s1 && ft_strchr(set, (int)*s1))
 		s1++;
-	size = ft_strlen(s1);
+	size = ft_strlen_safe(s1);
 	while (size > 0 && ft_strchr(set, (int)s1[size - 1]))
 		size--;
 	return (ft_substr(s1, 0, (size_t)size));

@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 16:39:19 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/21 17:56:27 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 20:53:54 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ bool	ft_is_valid_base(const char *src_base)
 	ft_bzero(seen, sizeof(seen));
 	if (!src_base)
 		return (false);
-	len = ft_strlen(src_base);
+	len = ft_strlen_safe(src_base);
 	if (len < 2)
 		return (false);
 	i = 0;

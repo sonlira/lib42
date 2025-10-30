@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 21:27:22 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/30 17:39:42 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 20:53:54 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	put_prufix(char *ptr_addres, t_snformat *snf)
 static ssize_t	effective_num_length(void *ptr)
 {
 	if (!ptr)
-		return (ft_strlen("(nil)"));
+		return (ft_strlen_safe("(nil)"));
 	return (ft_unumlen_base((uint64_t)ptr, BASE_HEX) + 2);
 }
 

@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 17:19:37 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/23 19:12:55 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 20:53:54 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,8 @@ ssize_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 	if (!dst || !src)
 		return (FT_ERROR);
-	dst_len = ft_strlen(dst);
-	src_len = ft_strlen(src);
+	dst_len = ft_strlen_safe(dst);
+	src_len = ft_strlen_safe(src);
 	if (dst_len == FT_ERROR || src_len == FT_ERROR)
 		return (FT_ERROR);
 	if (dstsize <= (size_t)dst_len)

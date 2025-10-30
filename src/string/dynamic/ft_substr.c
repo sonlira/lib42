@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 20:04:22 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/12 20:31:18 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 20:53:54 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (NULL);
-	if (start >= (unsigned int)ft_strlen(s))
+	if (start >= (unsigned int)ft_strlen_safe(s))
 		return (ft_strdup(""));
-	size = ft_strlen(s + start);
+	size = ft_strlen_safe(s + start);
 	if (size > len)
 		size = len;
 	result = malloc(size + 1);

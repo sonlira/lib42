@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 22:05:27 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/20 19:05:13 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 20:53:54 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	if (!s || !f)
 		return (NULL);
-	size = ft_strlen(s);
+	size = ft_strlen_safe(s);
 	if (size == FT_ERROR)
 		return (NULL);
 	result = ft_calloc((size_t)size + 1, sizeof(*result));
