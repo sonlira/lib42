@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 16:16:21 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/30 20:15:00 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 21:17:07 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ char	**ft_arraydup(char **array);
 bool	ft_arrayassign(char ***dst, char **array);
 bool	ft_arraypush(char ***array, const char *val);
 bool	ft_arrayunshift(char ***array, const char *val);
-void	ft_sfree_strs(char ***array);
+void	ft_free_strs_safe(char ***array);
 void	ft_free_strs(char **array);
 void	*ft_free_strs_ret(char **array);
 
@@ -70,7 +70,7 @@ void	*ft_free_strs_ret(char **array);
  * Funciones para crear matrices bidimensionales dinámicas (`void **`).
  * Permiten reservar memoria para una matriz genérica de tamaño configurable,
  * con opción a añadir un puntero NULL al final para compatibilidad con
- * funciones tipo array (ft_arraylen, ft_free_array, etc.).
+ * funciones tipo array (ft_arraylen, ft_free_array_safe, etc.).
  */
 
 void	**ft_create_matrix(size_t rows, size_t cols, size_t size, \
