@@ -109,7 +109,7 @@ docs: documentación y comentarios
 ```
 ## Estado actual
 
-Versión **0.9-beta**
+Versión **1.0.0-beta**
 
 Esta versión compila correctamente y es funcional.  
 Actualmente se han realizado pruebas básicas de funcionamiento, pero aún faltan pruebas exhaustivas y de casos límite.
