@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 14:52:38 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/30 21:40:08 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/30 21:45:08 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@
  * Total: 2
  * @endcode
  */
-size_t	ft_putstrs_op(
+size_t	ft_putstrs_opt(
 	char **array,
 	bool with_index,
 	bool show_num,
@@ -82,5 +82,5 @@ size_t	ft_putstrs_op(
  */
 size_t	ft_putstrs(char **array)
 {
-	return (ft_putstrs_op(array, false, false, false));
+	return (ft_putstrs_opt(array, false, false, false));
 }
