@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 21:50:48 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/19 00:17:22 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/31 22:05:01 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 /**
  * @brief Inserta una nueva cadena al inicio de un array dinámico.
  *
+ * @details
  * La función ft_arrayunshift() amplía el array `*array` para insertar una nueva
  * cadena en la primera posición. Los punteros existentes se desplazan una
  * posición hacia la derecha (sin duplicarse) y el array anterior se libera
@@ -45,8 +46,6 @@ bool	ft_arrayunshift(char ***array, const char *val)
 	if (!array || !val)
 		return (false);
 	size = ft_arraylen((void **)*array);
-	if (size == FT_ERROR)
-		return (false);
 	buff = ft_calloc((size_t)(size + 2), sizeof(*buff));
 	if (!buff)
 		return (false);

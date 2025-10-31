@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 19:38:55 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/23 19:06:33 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/31 22:04:36 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 /**
  * @brief Duplica un array de cadenas de caracteres.
  *
+ * @details
  * La función ft_arraydup() crea una copia profunda del array de cadenas
  * `array`. Para cada elemento del array original, se reserva memoria
  * y se almacena una nueva copia mediante ft_strdup(). El nuevo array
@@ -44,8 +45,6 @@ char	**ft_arraydup(char **array)
 	if (!array)
 		return (NULL);
 	size = ft_arraylen((void **)array);
-	if (size == FT_ERROR)
-		return (NULL);
 	dups = ft_calloc((size_t)(size + 1), sizeof(*dups));
 	if (!dups)
 		return (NULL);

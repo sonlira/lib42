@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 16:16:21 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/30 21:45:08 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/31 22:01:01 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ bool	ft_atoi_safe(const char *s, int *n, bool strict);
  * así como para calcular su longitud de forma segura.
  */
 
-ssize_t	ft_arraylen(void **array);
-ssize_t	ft_strslen(char **array);
+size_t	ft_arraylen(void **array);
+size_t	ft_strslen(char **array);
 size_t	ft_putstrs_opt(char **array, bool with_index, bool show_num, \
 	bool with_total);
 size_t	ft_putstrs(char **array);

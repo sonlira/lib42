@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 21:01:34 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/30 21:02:47 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/31 22:04:28 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 /**
  * @brief Añade una nueva cadena al final de un array dinámico.
  *
+ * @details
  * La función ft_arraypush() amplía el array `*array` para añadir una nueva
  * cadena al final. Los punteros existentes se mueven al nuevo array sin
  * duplicar las cadenas, y el array anterior se libera (solo el contenedor).
@@ -43,8 +44,6 @@ bool	ft_arraypush(char ***array, const char *val)
 	if (!array || !val)
 		return (false);
 	size = ft_arraylen((void **)*array);
-	if (size == FT_ERROR)
-		return (false);
 	buff = ft_calloc((size_t)(size + 2), sizeof(*buff));
 	if (!buff)
 		return (false);

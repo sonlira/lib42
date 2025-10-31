@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 20:56:57 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/30 21:02:47 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/31 22:02:16 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 /**
  * @brief Duplica un array de cadenas y lo asigna al destino indicado.
  *
+ * @details
  * La función ft_arrayassign() crea una copia del array de cadenas `array`
  * y la asigna al puntero `*dst`. Si el destino ya contenía un array previo,
  * este se libera de forma segura mediante ft_free_array_safe().

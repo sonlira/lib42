@@ -6,7 +6,7 @@
 /*   By: abaldelo <abaldelo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 19:42:30 by abaldelo          #+#    #+#             */
-/*   Updated: 2025/10/30 21:02:47 by abaldelo         ###   ########.fr       */
+/*   Updated: 2025/10/31 22:01:12 by abaldelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 /**
  * @brief Calcula la longitud de un array genérico terminado en NULL.
  *
+ * @details
  * La función ft_arraylen() cuenta cuántos elementos contiene un array
  * de punteros terminado en NULL, sin importar el tipo de los elementos.
  *
- * Si el puntero `array` es NULL, la función devuelve `FT_ERROR`
- * (normalmente definido como -1) para indicar un error.
+ * Si el puntero `array` es NULL, la función devuelve `0` para indicar un error.
  *
  * @param array Array de punteros terminado en NULL.
  *
@@ -31,13 +31,13 @@
  *
  * @see ft_arraydup(), ft_arrayassign(), ft_free_array_safe()
  */
-ssize_t	ft_arraylen(void **array)
+size_t	ft_arraylen(void **array)
 {
 	ssize_t	length;
 
 	length = 0;
 	if (!array)
-		return (FT_ERROR);
+		return (length);
 	while (array[length])
 		length++;
 	return (length);
@@ -54,8 +54,8 @@ ssize_t	ft_arraylen(void **array)
  *
  * @param array  Array de cadenas terminado en `NULL`.
  *
- * @return La cantidad de elementos del array, o `FT_ERROR` 
- * (normalmente definido como -1) si el puntero @p array es `NULL`.
+ * @return La cantidad de elementos del array, o `0` 
+ * si el puntero @p array es `NULL`.
  *
  * @example
  * @code
@@ -68,7 +68,7 @@ ssize_t	ft_arraylen(void **array)
  * @see ft_free_srcs()
  * @see ft_sfree_srcs()
  */
-ssize_t	ft_strslen(char **array)
+size_t	ft_strslen(char **array)
 {
 	return (ft_arraylen((void **)array));
 }
