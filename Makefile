@@ -3,11 +3,9 @@
 # **************************************************************************** #
 
 NAME		:= lib42.a
-LIBFT		:= libft.a
-PRINTF		:= libftprintf.a
 
 CC			:= cc
-CFLAGS		:= -Wall -Wextra -Werror -Iinclude
+CFLAGS		:= -Wall -Wextra -Werror -Iinclude -Isrc/printf/internal
 
 SRC_DIR		:= src
 OBJ_DIR		:= obj
@@ -20,8 +18,8 @@ RM			:= rm -rf
 #                                   SOURCES                                    #
 # **************************************************************************** #
 
-# Buscar todos los .c excepto los de printf
-SRC			:= $(shell find $(SRC_DIR) -type f -name '*.c' ! -path "$(SRC_DIR)/printf/*")
+# Buscar todos los .c (incluyendo printf)
+SRC			:= $(shell find $(SRC_DIR) -type f -name '*.c')
 OBJ			:= $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
 # **************************************************************************** #
@@ -40,41 +38,30 @@ RESET		:= \033[0m
 
 all: $(NAME)
 
-# Crear la librería global combinada
-$(NAME): $(LIBFT) $(PRINTF)
-	@printf "\n$(YELLOW)→ Creando librería global:$(RESET) $(CYAN)$@$(RESET)\n"
-	@$(AR) $@ $(LIBFT) $(SRC_DIR)/printf/$(PRINTF)
-	@echo "$(GREEN)✔ Librería global $(NAME) creada correctamente.$(RESET)"
-
-# Crear la parte base (todo menos printf)
-$(LIBFT): $(OBJ)
-	@printf "\n$(YELLOW)→ Creando librería base:$(RESET) $(CYAN)$@$(RESET)\n"
+# Crear la librería única
+$(NAME): $(OBJ)
+	@printf "\n$(YELLOW)→ Creando librería:$(RESET) $(CYAN)$@$(RESET)\n"
 	@$(AR) $@ $(OBJ)
-	@echo "$(GREEN)✔ Librería base compilada correctamente.$(RESET)"
+	@ranlib $@
+	@echo "$(GREEN)✔ Librería $(NAME) creada correctamente.$(RESET)"
 
-# Compilar la parte printf por separado
-$(PRINTF):
-	@printf "\n$(YELLOW)→ Compilando printf...$(RESET)\n"
-	@$(MAKE) -s -C $(SRC_DIR)/printf
-	@echo "$(GREEN)✔ Printf compilado correctamente.$(RESET)"
-
-# Compilar los objetos (libft)
+# Compilar cada archivo .c a .o
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(dir $@)
 	@$(CC) $(CFLAGS) -c $< -o $@
 	@printf "\r\033[K$(GREEN)Compilando:$(RESET) $(CYAN)%s$(RESET)" "$(notdir $<)"
 
-# Limpiar
+# Limpiar objetos
 clean:
 	@$(RM) $(OBJ_DIR)
-	@$(MAKE) -s -C $(SRC_DIR)/printf clean
 	@echo "$(RED)✔ Objetos eliminados.$(RESET)"
 
+# Limpiar todo
 fclean: clean
-	@$(MAKE) -s -C $(SRC_DIR)/printf fclean
-	@$(RM) $(NAME) $(LIBFT) $(PRINTF)
-	@echo "$(RED)✔ Librerías eliminadas.$(RESET)"
+	@$(RM) $(NAME)
+	@echo "$(RED)✔ Librería eliminada.$(RESET)"
 
+# Reconstruir todo
 re: fclean all
 
 .PHONY: all clean fclean re
